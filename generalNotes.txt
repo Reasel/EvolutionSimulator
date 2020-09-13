@@ -1,0 +1,45 @@
+These are my general notes of the project:
+
+
+What I want is to have the ability to set some starting conditions like:
+Number of creatures
+Obstacles with frequency and size
+number of herbivores to start and carnivores.
+Making the walls of the arena solid or just passthrough like old asteroid games.
+
+
+
+The creatures themselves would be circles and would have vision in a cone in whatever direction they faced.
+Some sort of eye on the circle and placement would determine the cone of vision or moreover the opposite.
+I would also like to color them in such a way that at a glance you can tell what 'build' they are.
+Such as herbivore, carnivore, and omnivore. Maybe even scavenger.
+
+I want to introduce stat lines of 'skills' like you would have in an RPG where when an offspring is generated
+it will spend some 'points' into its tree. It will only spend up to a certain number equal to where it has information 
+on the success of that point from the parents. So that the inital creatures are not using all their 'points'.
+Thus it will take a few generations for all creatures to use all their points. With some randomness in when
+children branch from tradtion and take a new skill or something completely unlike their parents.
+
+
+Would like the ability to fast forward simulation by skipping rendering the game and instead focus on progressing game-ticks
+faster. Preferably on a slider to do in real time. As well as pausing.
+
+
+Would like to be able to click on a given creature and see its stats as well as its lineage. Such as clicking on its parents and being able
+to inspect that parent.
+
+Some sort of logging of all known creatures as well as their position/lifespan. This would allow for record of a simulation and the ability to playback
+a simulation again after the fact. Would like to be able to rewind given this information.
+
+Ability to delete creatures from an edit menu. That or change fundamental stats/brain parts.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If the creatures are simple finite machines of decisions that do not alter their own brains during their lifetime then the execution would be the exact
+same given the starting conditions and creatures. This is only true for the starting creatures. So to save the execution you would simply need to log 
+everything about a creature as well as its offspring so that on a 'replay' of an execution when two creatures decide to make a child you can have them
+look at the log too see if they have done so in the 'previous execution' and if so copy that exact creature and go from there. Thus removing the random
+generation of the new offspring. When the playback reaches the end of the known log then it simply continues execution using traditional random generation.
+This playback would be temporarily logged under a new log such that during this new playback you could make changes in the middle of the playback and have it continue.
+
